@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur les langages HTML et CSS - Talhaoui Rayan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input:invalid, select:invalid, textarea:invalid {
+            border-color: red;
+        }
+        input:valid, select:valid, textarea:valid {
+            border-color: green;
+        }
+        textarea {
+            height: 150px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Quiz sur les langages HTML et CSS</h2>
+    <p style="text-align: center; font-weight: bold;">Créé par Talhaoui Rayan</p>
+    <p>Ce quiz évalue vos connaissances en HTML et CSS. Remplissez le formulaire ci-dessous :</p>
+    
+    <form action="submit.php" method="post">
+        <label for="nom">Nom complet *</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom complet" required>
+
+        <label for="email">Adresse e-mail *</label>
+        <input type="email" id="email" name="email" placeholder="Entrez votre adresse e-mail" required>
+
+        <label for="date_quiz">Date du Quiz *</label>
+        <input type="date" id="date_quiz" name="date_quiz" required>
+
+        <fieldset>
+            <legend>Question à choix unique :</legend>
+            <p>Qu'est-ce que HTML ?</p>
+            <label><input type="radio" name="choix_unique" value="a" required> Un langage de programmation</label><br>
+            <label><input type="radio" name="choix_unique" value="b"> Un langage de balisage</label><br>
+            <label><input type="radio" name="choix_unique" value="c"> Un système d'exploitation</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Question à choix unique :</legend>
+            <p>Quel est l'objectif principal de CSS ?</p>
+            <label><input type="radio" name="choix_unique_css" value="a" required> Définir la structure du document</label><br>
+            <label><input type="radio" name="choix_unique_css" value="b"> Gérer le style et l’apparence</label><br>
+            <label><input type="radio" name="choix_unique_css" value="c"> Exécuter du code serveur</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Question à choix multiples :</legend>
+            <p>Quelles balises sont utilisées en HTML ? (Cochez toutes les bonnes réponses)</p>
+            <label><input type="checkbox" name="choix_multiples[]" value="balise_div"> &lt;div&gt; </label><br>
+            <label><input type="checkbox" name="choix_multiples[]" value="balise_p"> &lt;p&gt; </label><br>
+            <label><input type="checkbox" name="choix_multiples[]" value="balise_img"> &lt;img&gt; </label><br>
+            <label><input type="checkbox" name="choix_multiples[]" value="balise_script"> &lt;script&gt; </label><br>
+            <label><input type="checkbox" name="choix_multiples[]" value="balise_style"> &lt;style&gt; </label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Question à choix unique :</legend>
+            <p>Quelle propriété CSS est utilisée pour changer la couleur du texte ?</p>
+            <label><input type="radio" name="choix_couleur" value="a" required> background-color</label><br>
+            <label><input type="radio" name="choix_couleur" value="b"> text-color</label><br>
+            <label><input type="radio" name="choix_couleur" value="c"> color</label><br>
+        </fieldset>
+
+        <label for="email_validation">Quel est le format correct d'une adresse e-mail ? *</label>
+        <input type="email" id="email_validation" name="email_validation" placeholder="exemple@domaine.com" required>
+
+        <label for="liste_deroulante">Sélectionnez votre niveau en HTML/CSS *</label>
+        <select id="liste_deroulante" name="niveau_html_css" required>
+            <option value="" disabled selected>-- Sélectionnez votre niveau --</option>
+            <optgroup label="HTML">
+                <option value="debutant">Débutant</option>
+                <option value="intermediaire">Intermédiaire</option>
+                <option value="avance">Avancé</option>
+            </optgroup>
+            <optgroup label="CSS">
+                <option value="debutant">Débutant</option>
+                <option value="intermediaire">Intermédiaire</option>
+                <option value="avance">Avancé</option>
+            </optgroup>
+        </select>
+
+        <label for="zone_code">Entrez du code HTML ou CSS *</label>
+        <textarea id="zone_code" name="code_html_css" placeholder="Entrez votre code ici..." required></textarea>
+
+        <button type="submit">Envoyer</button>
+    </form>
+</body>
+</html>
